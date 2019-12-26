@@ -25,7 +25,7 @@ return(
     <ul style={styles} >
        {this.props.message.map( (msg) => {
         return(
-        <li className="container"  key={msg.id} >
+        <li className="container"  key={msg.text} >
                 <div >
                        <span  >{msg.name}</span> 
                 </div>

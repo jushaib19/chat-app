@@ -56,9 +56,35 @@ class Chat extends Component {
           }
 
           componentDidMount = () => {
-            setInterval(this.randomMessage, 15000)
+            setInterval(this.randomMessage, 3000);
+           // console.log('LOL',JSON.parse(localStorage.getItem("message")))
+              if (!JSON.parse(localStorage.getItem("message"))){
+                return null
+              }
+              this.setState({messages: JSON.parse(localStorage.getItem("message"))})
+            
+          }
+          
+          componentDidUpdate= () => {
+            console.log('abc', this.state.messages);
+            localStorage.setItem("message", JSON.stringify(this.state.messages));            
+
           }
 
+       /* static getDerivedStateFromProps(nextProps, prevState)
+            {
+              console.log('LOL',JSON.parse(localStorage.getItem("message")))
+              if (!JSON.parse(localStorage.getItem("message"))){
+                return null
+              }
+              return {
+                
+                messages: JSON.parse(localStorage.getItem("message"))
+                
+              };
+
+            }
+            */
 render(){
 
     return (

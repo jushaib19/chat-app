@@ -25,11 +25,13 @@ class SendMessageForm extends Component {
                 onSubmit(e)
                 {
                     e.preventDefault();
-                    this.setState({text: ""});
+                  //  this.setState({text: ""});
                     this.props.onSendMessage(this.state.text);
                    // this.setState({text: ""});    
                         
                 }
+
+                
     render(){
 
         const style = {
@@ -42,7 +44,7 @@ class SendMessageForm extends Component {
             <form  onSubmit={(e) => this.onSubmit(e)}>
             
             
-            <input style={style} value={this.state.text} onChange={(e) => this.onChange(e)} type='text' placeholder='Enter your message' autofocus="false"></input>
+            <input style={style}  onChange={(e) => this.onChange(e)} type='text' required placeholder='Enter your message' autoFocus={true} ></input>
             <button type='submit'> Send! </button>
             
             
